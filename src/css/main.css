@@ -1,0 +1,58 @@
+html {
+    background: linear-gradient(#fff, #ffdaef);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+button {
+    width: 10em;
+    height:2em;
+    font-size: 36px;
+    background: #ff91cf;
+    color: #fff;
+}
+
+body { 
+    
+    width: 500px;
+    margin: 0 auto;
+}
+
+.title{
+    text-align: center;
+}
+
+.votingButton{
+    text-align: center;
+}
+
+.copyButton{
+    width: 10em;
+    height:3em;
+    font-size: 18px;
+    background: #ff91cf;
+    color: #000;
+}
+
+.updateHistory{
+    margin: 0 auto;
+    text-align: left;
+    margin-left: 70px;
+}
+
+.title_1{
+    margin: 0 auto;
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+/* ハンバーガーメニューのアイコンのスタイル */
+.historyLine {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    margin-bottom: 4px;
+}
