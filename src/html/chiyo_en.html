@@ -2,8 +2,8 @@
 <html lang="ja">
     <head>
       <meta charset="uft-8">
-      <script src="main.js"></script>
-      <link rel="stylesheet" href="main.css" type="text/css">
+      <script src="../js/main.js"></script>
+      <link rel="stylesheet" href="../css/main.css" type="text/css">
       <title>ミューコミVR VTuber楽曲ランキング 千代浦蝶美投票サイト</title>
     </head>
     <body>
@@ -19,26 +19,30 @@
             <div class="votingButton">
                 <br>
                 <font size="6" color= #ff91cf>↓かんたん投票はこちら↓</font>
+                <br>A post screen with the voting template
+                <br>already filled in will open,
+                <br>↓so please post as is.↓
                 <br>
-                投票用テンプレ入力済みのポスト画面が開くので
-                <br>↓そのままご投稿ください↓
-                <br>
-                <button id="postBtn" onclick="post()">Xで投票する</button>
-                <br>↑投票用文章が自動でコピーされるので↑
-                <br>そのままDMに貼り付けて投票ができます！
-                <br>
-                <br>
-                <br>投票用テンプレ入力済みのDM画面が開くので
-                <br>↓そのままご投稿ください↓
-                <br>
-                <button id="postBtn" onclick="dm()">DMで投票する</button>
+                <button id="postBtn" onclick="post()">Vote by post</button>
+                <br>↑The voting text will be↑
+                <br>automatically copied,
+                <br>so you can simply paste it
+                <br>into a DM to vote!
                 <br>
                 <br>
+                <br>A DM screen with the voting template
+                <br>already filled in will open,
+                <br>↓so please post as is.↓
                 <br>
-                <br>投票ボタンが上手く動かない時は下のボタンで
-                <br>投票テンプレートをコピー出来ます
+                <button id="postBtn" onclick="dm()">Vote by DM</button>
                 <br>
-                <button class="copyButton" onclick="copyToClipboard()">テンプレをコピー</button>
+                <br>
+                <br>
+                <br>If the voting buttons do not work
+                <br>properly, you can copy the
+                <br>voting template using the button below.
+                <br>
+                <button class="copyButton" onclick="copyToClipboard()">Copy template</button>
                 <br>
                 <br>
                 <textarea  id="copyTarget" type="text" cols="44" rows="4"  readonly>
@@ -49,10 +53,13 @@
                 <a href= "https://x.com/mc1242" >ミューコミVR公式X(旧Twitter)</a>
                 <br>
                 <br>
-                <br>不具合等はお手数ですが下記リンクから
-                <br>管理人までご連絡をお願いします。
-                <br>管理人(Admin):
-                <a href= "https://x.com/spi_milkprinces" >スピ(X:旧Twitter)</a>
+                <br>If you experience any problems,
+                <br>please contact the administrator
+                <br>using the link below.
+                <br>Admin:
+                <a href= "https://x.com/spi_milkprinces" >スピ(Spi's X)</a>
+                <br>
+                <br>
             </div>
     </body>
 </html>

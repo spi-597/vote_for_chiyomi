@@ -2,96 +2,98 @@
 <html lang="ja">
     <head>
       <meta charset="uft-8">
-      <script src="main.js"></script>
-      <link rel="stylesheet" href="main.css" type="text/css">
+      <script src="../js/main.js"></script>
+      <link rel="stylesheet" href="../css/main.css" type="text/css">
       <title>ミューコミVR VTuber楽曲ランキング 千代浦蝶美投票サイト</title>
     </head>
     <body>
-            <div class="title" >
-                <div class="title_1">
-                    <font size="3">ミューコミVR VTuber楽曲ランキング</font>
-                </div>
-                <div  class="title_2">
-                    <font size="7">千代浦蝶美投票サイト</font>
-                </div>
+        <div class="title" >
+            <div class="title_1">
+                <font size="3">ミューコミVR VTuber楽曲ランキング</font>
             </div>
-            <br>
-            <div class="updateHistory">
-                <details>
-                    <summary><u>更新履歴：2024/10/03更新</u></summary>
-                    <p>
-                        2024/09/28
-                        <br>・全体的なデザイン・レイアウトを変更。
-                        <br>　これに伴い使い方ページは一時閉鎖します。
-                        <br>・テンプレ入力済みのDM投票ボタンを実装。
-                        <br>　ポストで投票時にテンプレをコピーする機能は引き続き使えます。
-                        <br>・英語版投票ページを実装。
-                        <br>　これに伴いHow to useページは一時閉鎖します。
-                        <br>
-                        <br>2024/09/25
-                        <br>・画面上部メニューに日本語と英語で使い方を追加
-                        <br>
-                        <br>2024/09/23
-                        <br>・念の為管理人のSNSへのリンクを追加
-                        <br>・スマホを意識して画面レイアウトを若干変更ご利用のスマホの画面解像度次第では上下・左右のスクロールバーが表示されるかもしれませんが、
-                        <br>ボタンが隠れることはないと思いますのでそのままご利用ください。
-                        <br>
-                        <br>2024/09/18
-                        <br>・更新履歴を設置しました。
-                        <br>・画面の見栄えを若干良くしました。
-                        <br>
-                        <br>2024/09/17
-                        <br>・微アップデート
-                        <br>　POSTボタンのタップorクリックでDM投票用文章をコピーしてXのポスト画面を表示するように修正、
-                        <br>　投票用ポスト後にそのままDMに投票可能になりました。
-                        <br>　COPYボタンも残してますので上手くいかなかった場合など必要に応じてご利用頂けます。
-                        <br>
-                        <br>2024/09/16
-                        <br>・リリース
-                    </p>
-                </details>
+            <div  class="title_2">
+                <font size="7">千代浦蝶美投票サイト</font>
             </div>
+        </div>
+        <br>
+        <div class="updateHistory">
+            <details>
+                <summary><u>更新履歴：今日更新</u></summary>
+                <p>
+                    2024/09/28
+                    <br>・全体的なデザイン・レイアウトを変更。
+                    <br>　これに伴い使い方ページは一時閉鎖します。
+                    <br>・テンプレ入力済みのDM投票ボタンを実装。
+                    <br>　ポストで投票時にテンプレをコピーする機能は引き続き使えます。
+                    <br>・英語版投票ページを実装。
+                    <br>　これに伴いHow to useページは一時閉鎖します。
+                    <br>
+                    <br>2024/09/25
+                    <br>・画面上部メニューに日本語と英語で使い方を追加
+                    <br>
+                    <br>2024/09/23
+                    <br>・念の為管理人のSNSへのリンクを追加
+                    <br>・スマホを意識して画面レイアウトを若干変更ご利用のスマホの画面解像度次第では上下・左右のスクロールバーが表示されるかもしれませんが、
+                    <br>ボタンが隠れることはないと思いますのでそのままご利用ください。
+                    <br>
+                    <br>2024/09/18
+                    <br>・更新履歴を設置しました。
+                    <br>・画面の見栄えを若干良くしました。
+                    <br>
+                    <br>2024/09/17
+                    <br>・微アップデート
+                    <br>　POSTボタンのタップorクリックでDM投票用文章をコピーしてXのポスト画面を表示するように修正、
+                    <br>　投票用ポスト後にそのままDMに投票可能になりました。
+                    <br>　COPYボタンも残してますので上手くいかなかった場合など必要に応じてご利用頂けます。
+                    <br>
+                    <br>2024/09/16
+                    <br>・リリース
+                </p>
+            </details>
+        </div>
+        <br>
+        <div class="votingButton">
+            毎日ポストとDMで2回投票出来ます！
             <br>
-            <div class="votingButton">
-                毎日ポストとDMで2回投票出来ます！
-                <br>
-                <a href="chiyo_en.html">English page </a>
-                <br>
-                <font size="6" color= #ff91cf>↓かんたん投票はこちら↓</font>
-                <br>
-                投票用テンプレ入力済みのポスト画面が開くので
-                <br>↓そのままご投稿ください↓
-                <br>
-                <button id="postBtn" onclick="post()">Xで投票する</button>
-                <br>↑投票用文章が自動でコピーされるので↑
-                <br>そのままDMに貼り付けて投票ができます！
-                <br>
-                <br>
-                <br>投票用テンプレ入力済みのDM画面が開くので
-                <br>↓そのままご投稿ください↓
-                <br>
-                <button id="postBtn" onclick="dm()">DMで投票する</button>
-                <br>
-                <br>
-                <br>
-                <br>投票ボタンが上手く動かない時は下のボタンで
-                <br>投票テンプレートをコピー出来ます
-                <br>
-                <button class="copyButton" onclick="copyToClipboard()">テンプレをコピー</button>
-                <br>
-                <br>
-                <textarea  id="copyTarget" type="text" cols="44" rows="4"  readonly>
+            <a href="chiyo_en.html">English page </a>
+            <br>
+            <font size="6" color= #ff91cf>↓かんたん投票はこちら↓</font>
+            <br>
+            投票用テンプレ入力済みのポスト画面が開くので
+            <br>↓そのままご投稿ください↓
+            <br>
+            <button id="postBtn" onclick="post()">Xで投票する</button>
+            <br>↑投票用文章が自動でコピーされるので↑
+            <br>そのままDMに貼り付けて投票ができます！
+            <br>
+            <br>
+            <br>投票用テンプレ入力済みのDM画面が開くので
+            <br>↓そのままご投稿ください↓
+            <br>
+            <button id="postBtn" onclick="dm()">DMで投票する</button>
+            <br>
+            <br>
+            <br>
+            <br>投票ボタンが上手く動かない時は下のボタンで
+            <br>投票テンプレートをコピー出来ます
+            <br>
+            <button class="copyButton" onclick="copyToClipboard()">テンプレをコピー</button>
+            <br>
+            <br>
+            <textarea  id="copyTarget" type="text" cols="44" rows="4"  readonly>
 （千代浦蝶美）さんの『Butterfly Dream』に投票します！
 #VTuber楽曲ランキング #ミューコミVR</textarea>
-                <br>
-                Link:
-                <a href= "https://x.com/mc1242" >ミューコミVR公式X(旧Twitter)</a>
-                <br>
-                <br>
-                <br>不具合等はお手数ですが下記リンクから
-                <br>管理人までご連絡をお願いします。
-                <br>管理人(Admin):
-                <a href= "https://x.com/spi_milkprinces" >スピ(X:旧Twitter)</a>
-            </div>
+            <br>
+            Link:
+            <a href= "https://x.com/mc1242" >ミューコミVR公式X(旧Twitter)</a>
+            <br>
+            <br>
+            <br>不具合等はお手数ですが下記リンクから
+            <br>管理人までご連絡をお願いします。
+            <br>管理人(Admin):
+            <a href= "https://x.com/spi_milkprinces" >スピ(X:旧Twitter)</a>
+            <br>
+            <br>
+        </div>
     </body>
 </html>
