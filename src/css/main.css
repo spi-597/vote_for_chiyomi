@@ -7,9 +7,6 @@ html {
 }
 
 button {
-    /* width: 10em;
-    height:2em;
-    font-size: 36px; */
     background: #ff91cf;
     color: #fff;
     cursor: pointer;
@@ -26,7 +23,7 @@ button {
 .votingBtn{
     width: 10em;
     height:2em;
-    font-size: xxx-large;
+    font-size: 46px;
 }
 
 .copyButton{
