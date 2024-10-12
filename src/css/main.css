@@ -16,6 +16,12 @@ button {
     text-align: center;
 }
 
+.title_1{
+    margin: 0 auto;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .voting{
     text-align: center;
 }
@@ -41,12 +47,6 @@ button {
     font-size: medium;
 }
 
-.title_1{
-    margin: 0 auto;
-    text-align: left;
-    margin-left: 10px;
-}
-
 /* PC */
 @media screen and (min-width: 1024px) {
     body { 
@@ -54,6 +54,10 @@ button {
         margin-top: 40px;
         margin-left: 70px;
         font-family: sans-serif;
+    }
+    
+    .title_1{
+        margin-left: 10px;
     }
 }
 
@@ -65,6 +69,7 @@ button {
         left: 37%;
         width: 60%;
     }
+    
     .moveFrame{
         width: 100%;
         height: auto;
@@ -80,6 +85,7 @@ button {
         right: 2%;
         width: 53%;
     }
+
     .moveFrame{
         width: 100%;
         height: auto;
@@ -95,6 +101,7 @@ button {
         right: 2%;
         width: 42%;
     }
+
     .moveFrame{
         width: 100%;
         height: auto;
@@ -109,10 +116,16 @@ button {
         margin: 20px auto;
         font-family: sans-serif;
     }
+
+    .title_1{
+        margin-left: 150px;
+    }
+
     .move{
         width: 100%;
         margin: 0 auto;
     }
+
     .moveFrame{
         width: 100%;
         height: auto;
