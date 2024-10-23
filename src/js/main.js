@@ -25,7 +25,7 @@ window.onload = function(){
     var locationUrl = location.href;
     var behindUrl = locationUrl.substring(locationUrl.length-7);
 
-    var htmlJp = "ex.html"
+    var htmlJp = "hiyomi/"
     var htmlEn = "en.html"
     var htmlCt = "on.html"
 
