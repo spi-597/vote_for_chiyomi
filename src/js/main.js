@@ -1,50 +1,108 @@
-function post() {
-    // テキストをクリップボードにコピーする
-    copyToClipboard();
-
-    // 新しいタブでポスト画面を開く
-    window.open('https://twitter.com/intent/tweet?&text=%EF%BC%88%E5%8D%83%E4%BB%A3%E6%B5%A6%E8%9D%B6%E7%BE%8E%EF%BC%89%E3%81%95%E3%82%93%E3%81%AE%E3%80%8EButterfly+Dream%E3%80%8F%E3%81%AB%E6%8A%95%E7%A5%A8%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81%0D%0A%23VTuber%E6%A5%BD%E6%9B%B2%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0+%23%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B3%E3%83%9FVR');
+var epocTime = votingEndDays + ' ' + votingEndTime;
+var endDate = new Date (epocTime);
+var endsEpocTime = endDate.getTime();
+var nowDateTime = new Date();
+var nowEpocTime = nowDateTime.getTime();
+var cookie = document.cookie.split(';');
+for (const c of cookie) {
+    if (c.split('=')[0] == COOKIE_NAME) {
+        songListNo = c.split('=')[1];
+    }
 }
-function copyToClipboard() {
-    // コピー対象をJavaScript上で変数として定義する
-    var copyTarget = document.getElementById("copyTarget");
-
-    // コピー対象のテキストを選択する
-    copyTarget.select();
-
-    // 選択しているテキストをクリップボードにコピーする
-    document.execCommand("Copy");
-}
-function dm() {
-    // 新しいタブでポスト画面を開く
-    window.open('https://twitter.com/messages/compose?recipient_id=100786821&text=%EF%BC%88%E5%8D%83%E4%BB%A3%E6%B5%A6%E8%9D%B6%E7%BE%8E%EF%BC%89%E3%81%95%E3%82%93%E3%81%AE%E3%80%8EButterfly+Dream%E3%80%8F%E3%81%AB%E6%8A%95%E7%A5%A8%E3%81%97%E3%81%BE%E3%81%99%EF%BC%81%0D%0A%23VTuber%E6%A5%BD%E6%9B%B2%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0+%23%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B3%E3%83%9FVR');
-}
-
 
 window.onload = function(){
-    var locationUrl = location.href;
-    var behindUrl = locationUrl.substring(locationUrl.length-7);
+    if (nowEpocTime >= endsEpocTime) {
+        //サ終メッセージを表示
+        document.getElementById('votingJp').innerHTML = messageStrJp;
+    } else {
+        //楽曲プルダウンリストを作成
+        createSongList();
+        //投票終了日を表示
+        document.getElementById('endDate').innerHTML = votingEndDate();
+        document.getElementById('move').innerHTML = mvEmbedList[songListNo];
+    }
+}
 
-    var htmlJp = "hiyomi/"
-    var htmlEn = "en.html"
-    var htmlCt = "on.html"
+function votingEndDate() {
+    //投票終了日フォーマット
+    var dayOfTheWeek = new Date(epocTime);
+    var DateTimeArray = [''];
+    DateTimeArray.push(dayOfTheWeek.getFullYear());
+    DateTimeArray.push('年');
+    DateTimeArray.push(dayOfTheWeek.getMonth()+1);
+    DateTimeArray.push('月');
+    DateTimeArray.push(dayOfTheWeek.getDate());
+    DateTimeArray.push('日');
+    DateTimeArray.push('(');
+    DateTimeArray.push(days[dayOfTheWeek.getDay()]);
+    DateTimeArray.push(') ');
+    DateTimeArray.push(votingEndTime.substring(0, 5));
+    DateTimeArray.push('まで');
+    return DateTimeArray.join('');
+} 
 
-    var messageStrJp = "投票期間終了に伴いサービスを終了いたしました。<br>御協力頂きありがとうございました。<br><br>管理人(Admin):    <a href= \"https://x.com/spi_milkprinces\" target=\"_blank\" >スピ(X:旧Twitter)</a>"
-    var messageStrEn = "The service has ended as the voting period has ended.<br>Thank you for your cooperation.<br><br>Admin:<a href= \"https://x.com/spi_milkprinces\" target=\"_blank\" >スピ(Spi's X)</a>"
-    var messageStrCt = "由於投票期結束，呢個服務已經結束。<br>多謝你嘅合作。<br><br>管理員(Admin):<a href= \"https://x.com/spi_milkprinces\" target=\"_blank\" >スピ(Spi's X)</a>"
+function createSongList() {
 
-    var dateTime = new Date();
-    var epocTime = dateTime.getTime();
+    //select要素を取得する
+    var select = document.getElementById('songList');
+    for(var i = 0; i < songList.length; i++) {
+        //option要素を新しく作る
+        var option = document.createElement('option');
+        //option要素にvalueと表示名を設定
+        option.value = i;
+        option.textContent  = songList[i];
+        //select要素にoption要素を追加する
+        select.appendChild(option)
+    }
+    select.options[songListNo].selected = true;
+    document.getElementById('move').innerHTML = mvEmbedList[songListNo];
+}
+
+function selectSong(){
+    var select = document.getElementById('songList');
+    songListNo = select.selectedIndex;
+    document.getElementById('move').innerHTML = mvEmbedList[songListNo];
+}
+
+function post() {
+    // 新しいタブでポスト画面を開く
+    document.cookie = COOKIE_NAME+'='+songListNo+MAX_AGE+LIMIT;
+    // document.cookie = COOKIE_NAME+'='+songListNo;
+    createVoteMes(POST);
+}
+
+function dm() {
+    // 新しいタブでDM画面を開く
+    createVoteMes(DM);
+}
+
+function createVoteMes(btn) {
+    var postArray;
+    if (btn == POST) {
+        // POSTボタン押下時
+        postArray = ['https://twitter.com/intent/tweet?&text='];
+    } else if (btn == DM) {
+        // DMボタン押下時
+        postArray = ['https://twitter.com/messages/compose?recipient_id=100786821&text='];
+    }
+    // 投票文の組立
+    var asciiArray = ['（千代浦蝶美）さんの『'];
+    asciiArray.push(songList[songListNo]);
+    asciiArray.push('』に投票します！\n');
+
+    // ハッシュタグを追加
+    for(var i = 0; i < hashTagsList.length; i++) {
+        asciiArray.push(hashTagsList[i]);
+    }
     
-    if (epocTime >= 1730300400000) {
-        if (htmlJp == behindUrl) {
-            document.getElementById('votingJp').innerHTML = messageStrJp;
-        }
-        if (htmlEn == behindUrl) {
-            document.getElementById('votingEn').innerHTML = messageStrEn;
-        }
-        if (htmlCt == behindUrl) {
-            document.getElementById('votingCt').innerHTML = messageStrCt;
+    // MVリンクのチェック
+    if (btn == POST) {
+        if (document.mvLinkForm.elements[0].checked) {
+            asciiArray.push('\n');
+            asciiArray.push(mvLinkList[songListNo]);
         }
     }
-  } ;
+
+    postArray.push(encodeURIComponent(asciiArray.join('')));
+    window.open(postArray.join(''));
+}
