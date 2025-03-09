@@ -32,19 +32,23 @@ button {
     font-size: 46px;
 }
 
-.copyButton{
+/* .copyButton{
     width: 10em;
     height:3em;
     font-size: 18px;
     background: #ff91cf;
     color: #000;
-}
+} */
 
 .updateHistory{
     margin: 0 auto;
     text-align: left;
     margin-left: 70px;
     font-size: medium;
+}
+
+.mvLinkForm{
+    font-size: 25px;
 }
 
 /* PC */
@@ -58,6 +62,17 @@ button {
     
     .title_1{
         margin-left: 10px;
+    }
+    
+    .songList{
+        font-size: 25px;
+        width: 300px;
+        /* float: left; */
+        /* margin-left: 20px; */
+    }
+
+    .songSelect{
+        /* margin-right: 190px; */
     }
 }
 
@@ -74,7 +89,7 @@ button {
         width: 100%;
         height: auto;
         aspect-ratio: 16/9;
-    }
+    }    
 }
 
 /* MPC */
@@ -130,5 +145,16 @@ button {
         width: 100%;
         height: auto;
         aspect-ratio: 16/9;
+    }
+        
+    .songList{
+        font-size: 25px;
+        width: 300px;
+        /* float: left; */
+        /* margin-left: 162px; */
+    }
+
+    .songSelect{
+        /* margin-right: 130px; */
     }
 }

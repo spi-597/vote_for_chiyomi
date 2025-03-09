@@ -18,13 +18,15 @@
         <!-- End Google Tag Manager -->
 
         <meta charset="uft-8">
+        <script src="src/js/const.js"></script>
         <script src="src/js/main.js"></script>
         <link rel="stylesheet" href="src/css/main.css" type="text/css">
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@spi_milkprinces" />
         <meta name="twitter:title" content="千代浦蝶美投票サイト" />
         <meta name="twitter:description" content="ミューコミVR VTuber楽曲ランキング 千代浦蝶美投票サイト" />
-        <meta name="twitter:image" content="https://spi-597.github.io/vote_for_chiyomi/src/pic/TwitterCardJp.JPG" />
+        <!-- <meta name="twitter:image" content="https://spi-597.github.io/vote_for_chiyomi/src/pic/TwitterCardJp.JPG" /> -->
+        <meta name="twitter:image" content="https://spi-597.github.io/vote_for_chiyomi/src/pic/card.jpg" />
         <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
         <title>ミューコミVR VTuber楽曲ランキング 千代浦蝶美投票サイト</title>
     </head>
@@ -43,10 +45,17 @@
         </div>
         <br>
         <div id="votingJp">
-            <div class="updateHistory">
+            <!-- <div class="updateHistory">
                 <details>
-                    <summary><u>更新履歴：2024/10/12更新</u></summary>
+                    <summary><u>更新履歴：2025/03/09更新</u></summary>
                     <p>
+                        2025/03/09
+                        <br>・夢追いの蝶追加対応
+                        <br>　・新規楽曲実装に伴いドロップダウンリンクを実装
+                        <br>　・投票POSTにMVのリンクを挿入する為のチェックボックスを実装
+                        <br>・海外向けページを削除
+                        <br>　それに伴い若干のレイアウト修正
+                        <br>
                         2024/10/12
                         <br>・広東語ページを作成。
                         <br>・英語と広東語で番組とランキングの概要説明ページを作成
@@ -89,60 +98,47 @@
                         <br>・リリース
                     </p>
                 </details>
-            </div>
+            </div> -->
             <br>
             <div class="voting">
-                <a href="src/html/chiyo_en.html">English page</a>
-                 / 
-                <a href="src/html/chiyo_canton.html">廣東話專頁</a>
-                <br>
-                <br>2024年10月30日(水)　23:59まで
+                <div id="endDate"></div>
                 <br>
                 <font size="5" color= #ff91cf>毎日ポストとDMで2回投票出来ます！</font>
                 <br>
                 <font size="6" color= #ff91cf>↓かんたん投票はこちら↓</font>
                 <br>
-                投票用テンプレ入力済みのポスト画面が開くので
+                <br>
+                ↓①投票する楽曲を選択してください↓
+                <br>
+                <select name="songList" id="songList" class="songList" onchange="selectSong()"></select>
+                <br>
+                <br>
+                ②投票用テンプレ入力済みのポスト画面が開くので
                 <br>↓そのままご投稿ください↓
                 <br>
-                <button id="postBtn" class="votingBtn" onclick="post()">Xで投票する</button>
-                <br>↑投票用文章が自動でコピーされるので↑
-                <br>そのままDMに貼り付けて投票ができます！
+                <button id="postBtn" class="votingBtn LBtn" onclick="post()">Xで投票する</button>
                 <br>
-                <br>
-                <br>投票用テンプレ入力済みのDM画面が開くので
+                <form name='mvLinkForm' class="mvLinkForm">
+                    <label for="hoge">
+                        <input type="checkbox" name="mvLink" id="hoge" >投票ポストにMVのリンクを貼り付ける
+                    </label>
+                </form>
+                <br>③投票用テンプレ入力済みのDM画面が開くので
                 <br>↓そのままご投稿ください↓
                 <br>
-                <button id="dmBtn" class="votingBtn" onclick="dm()">DMで投票する</button>
+                <button id="dmBtn" class="votingBtn LBtn" onclick="dm()">DMで投票する</button>
                 <br>
                 <br>
-                <br>
-                <br>投票ボタンが上手く動かない時は下のボタンで
-                <br>投票テンプレートをコピー出来ます
-                <br>
-                <button id="copyBtn" class="copyButton" onclick="copyToClipboard()">テンプレをコピー</button>
-                <br>
-                <br>
-                <textarea  id="copyTarget" type="text" cols="44" rows="4"  readonly>
-（千代浦蝶美）さんの『Butterfly Dream』に投票します！
-#VTuber楽曲ランキング #ミューコミVR</textarea>
-                <br>
+            </div>
+            <div class="move" id="move"></div>
+            <div class="voting">
                 Link:
                 <a href= "https://x.com/mc1242" target="_blank" >ミューコミVR公式X(旧Twitter)</a>
                 <br>
-                <br>
-            </div>
-            <div class="move">
-                <iframe class="moveFrame" src="https://www.youtube.com/embed/rBXvnL-T8_s?si=5lcoV9ZijoP_lRki" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="voting">
-                <br>
                 <br>不具合等はお手数ですが下記リンクから
                 <br>管理人までご連絡をお願いします。
-                <br>管理人(Admin):
+                <br>管理人:
                 <a href= "https://x.com/spi_milkprinces" target="_blank" >スピ(X:旧Twitter)</a>
-                <br>
-                <br>
             </div>
         </div>
     </body>
