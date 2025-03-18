@@ -62,12 +62,11 @@ function selectSong(){
     var select = document.getElementById('songList');
     songListNo = select.selectedIndex;
     document.getElementById('move').innerHTML = mvEmbedList[songListNo];
+    document.cookie = COOKIE_NAME+'='+songListNo+MAX_AGE+LIMIT;
 }
 
 function post() {
     // 新しいタブでポスト画面を開く
-    document.cookie = COOKIE_NAME+'='+songListNo+MAX_AGE+LIMIT;
-    // document.cookie = COOKIE_NAME+'='+songListNo;
     createVoteMes(POST);
 }
 
