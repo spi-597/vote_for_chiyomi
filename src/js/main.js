@@ -26,19 +26,22 @@ window.onload = function(){
 function votingEndDate() {
     //投票終了日フォーマット
     var dayOfTheWeek = new Date(epocTime);
-    var DateTimeArray = [''];
-    DateTimeArray.push(dayOfTheWeek.getFullYear());
-    DateTimeArray.push('年');
-    DateTimeArray.push(dayOfTheWeek.getMonth()+1);
-    DateTimeArray.push('月');
-    DateTimeArray.push(dayOfTheWeek.getDate());
-    DateTimeArray.push('日');
-    DateTimeArray.push('(');
-    DateTimeArray.push(days[dayOfTheWeek.getDay()]);
-    DateTimeArray.push(') ');
-    DateTimeArray.push(votingEndTime.substring(0, 5));
-    DateTimeArray.push('まで');
-    return DateTimeArray.join('');
+    // var DateTimeArray = [''];
+    // DateTimeArray.push(dayOfTheWeek.getFullYear());
+    // DateTimeArray.push('年');
+    // DateTimeArray.push(dayOfTheWeek.getMonth()+1);
+    // DateTimeArray.push('月');
+    // DateTimeArray.push(dayOfTheWeek.getDate());
+    // DateTimeArray.push('日');
+    // DateTimeArray.push('(');
+    // DateTimeArray.push(days[dayOfTheWeek.getDay()]);
+    // DateTimeArray.push(') ');
+    // DateTimeArray.push(votingEndTime.substring(0, 5));
+    // DateTimeArray.push('まで');
+    // return DateTimeArray.join('');
+    return dayOfTheWeek.getFullYear() + '年' + (dayOfTheWeek.getMonth()+1) + '月' 
+        + dayOfTheWeek.getDate() + '日' + '(' + days[dayOfTheWeek.getDay()] 
+        + ') ' + votingEndTime.substring(0, 5) + 'まで'
 } 
 
 function createSongList() {
