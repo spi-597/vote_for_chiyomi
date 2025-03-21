@@ -74,6 +74,11 @@ button {
     .songSelect{
         /* margin-right: 190px; */
     }
+    
+    .attention{
+        text-align: left;
+    }
+    
 }
 
 /* LPC */
@@ -156,5 +161,10 @@ button {
 
     .songSelect{
         /* margin-right: 130px; */
+    }
+
+    .attention{
+        text-align: left;
+        margin-left: 130px;
     }
 }
