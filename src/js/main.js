@@ -88,7 +88,7 @@ function createVoteMes(btn) {
         postArray = ['https://twitter.com/messages/compose?recipient_id=100786821&text='];
     }
     // 投票文の組立
-    var asciiArray = ['（千代浦蝶美）さんの『'];
+    var asciiArray = ['(千代浦蝶美)さんの『'];
     asciiArray.push(songList[songListNo]);
     asciiArray.push('』に投票します！\n');
 
