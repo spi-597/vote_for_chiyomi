@@ -1,9 +1,12 @@
 // 終了日
-var votingEndDays = '2025/04/23';
+var votingEndDays = '9999/12/31';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
-const COOKIE_NAME = 'newSong_20250205';
+const COOKIE_SONG_UPDATE = 'newSong_20250205';
+
+// 前回投票日
+const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 
 // 楽曲リスト
 const songList = new Array(
