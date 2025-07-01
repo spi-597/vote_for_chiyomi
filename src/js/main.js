@@ -1,12 +1,16 @@
-var epocTime = votingEndDays + ' ' + votingEndTime;
+var epocTime = votingEndDays + 'T' + votingEndTime;
 var endDate = new Date (epocTime);
 var endsEpocTime = endDate.getTime();
 var nowDateTime = new Date();
 var nowEpocTime = nowDateTime.getTime();
 var cookie = document.cookie.split(';');
+var lastVoteDate;
 for (const c of cookie) {
-    if (c.split('=')[0] == COOKIE_NAME) {
+    if (c.split('=')[0].trimStart() == COOKIE_SONG_UPDATE) {
         songListNo = c.split('=')[1];
+    }
+    if (c.split('=')[0].trimStart() == COOKIE_LAST_VOTE_DATE) {
+        lastVoteDate = c.split('=')[1];
     }
 }
 
@@ -26,23 +30,17 @@ window.onload = function(){
 function votingEndDate() {
     //投票終了日フォーマット
     var dayOfTheWeek = new Date(epocTime);
-    // var DateTimeArray = [''];
-    // DateTimeArray.push(dayOfTheWeek.getFullYear());
-    // DateTimeArray.push('年');
-    // DateTimeArray.push(dayOfTheWeek.getMonth()+1);
-    // DateTimeArray.push('月');
-    // DateTimeArray.push(dayOfTheWeek.getDate());
-    // DateTimeArray.push('日');
-    // DateTimeArray.push('(');
-    // DateTimeArray.push(days[dayOfTheWeek.getDay()]);
-    // DateTimeArray.push(') ');
-    // DateTimeArray.push(votingEndTime.substring(0, 5));
-    // DateTimeArray.push('まで');
-    // return DateTimeArray.join('');
+
     return dayOfTheWeek.getFullYear() + '年' + (dayOfTheWeek.getMonth()+1) + '月' 
         + dayOfTheWeek.getDate() + '日' + '(' + days[dayOfTheWeek.getDay()] 
         + ') ' + votingEndTime.substring(0, 5) + 'まで'
 } 
+
+function votingDate() {
+    //投票日
+    var dayOfTheWeek = new Date();
+    return dayOfTheWeek.getFullYear() + '/' + (dayOfTheWeek.getMonth()+1) + '/' + dayOfTheWeek.getDate();
+}
 
 function createSongList() {
 
@@ -65,7 +63,7 @@ function selectSong(){
     var select = document.getElementById('songList');
     songListNo = select.selectedIndex;
     document.getElementById('move').innerHTML = mvEmbedList[songListNo];
-    document.cookie = COOKIE_NAME+'='+songListNo+MAX_AGE+LIMIT;
+    document.cookie = COOKIE_SONG_UPDATE+'='+songListNo+MAX_AGE+LIMIT;
 }
 
 function post() {
@@ -79,6 +77,16 @@ function dm() {
 }
 
 function createVoteMes(btn) {
+
+    var nowDate = votingDate();
+    if (lastVoteDate == nowDate) {
+        if(!window.confirm('本日は既に投票ボタンを押されているようです。\r\n複数投票は無効になりますのでご注意ください。')) {
+            return;
+        }
+    }
+
+    document.cookie = COOKIE_LAST_VOTE_DATE+'='+nowDate+MAX_AGE+LIMIT;
+
     var postArray;
     if (btn == POST) {
         // POSTボタン押下時
