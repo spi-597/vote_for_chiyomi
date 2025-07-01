@@ -1,4 +1,4 @@
-var epocTime = votingEndDays + ' ' + votingEndTime;
+var epocTime = votingEndDays + 'T' + votingEndTime;
 var endDate = new Date (epocTime);
 var endsEpocTime = endDate.getTime();
 var nowDateTime = new Date();
