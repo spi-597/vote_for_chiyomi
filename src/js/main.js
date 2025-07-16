@@ -101,8 +101,12 @@ function createVoteMes(btn) {
     asciiArray.push('』に投票します！\n');
 
     // ハッシュタグを追加
-    for(var i = 0; i < hashTagsList.length; i++) {
-        asciiArray.push(hashTagsList[i]);
+    for(var i = 0; i < oddHashTagsList.length; i++) {
+        if(nowDateTime.getDate() % 2 !== 0) {
+            asciiArray.push(oddHashTagsList[i]);
+        } else {
+            asciiArray.push(evenHashTagsList[i]);
+        }
     }
     
     // MVリンクのチェック

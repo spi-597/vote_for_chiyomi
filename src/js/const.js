@@ -27,7 +27,12 @@ const mvLinkList = new Array(
 );    
 
 // ハッシュタグリスト
-const hashTagsList = new Array(
+const oddHashTagsList = new Array(
+    '#ミューコミVR '
+    , '#VTuber楽曲ランキング'
+);
+
+const evenHashTagsList = new Array(
     '#VTuber楽曲ランキング '
     , '#ミューコミVR'
 );
