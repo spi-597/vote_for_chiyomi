@@ -1,5 +1,5 @@
 // 終了日
-var votingEndDays = '2025-08-06';
+var votingEndDays //= '2026-09-06';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
@@ -11,19 +11,19 @@ const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 // 楽曲リスト
 const songList = new Array(
     '夢追いの蝶'
-    // , 'Butterfly Dream'
+    , 'Butterfly Dream'
 );    
 
 // ポスト埋め込みURLリスト
 const mvEmbedList = new Array(
     '<iframe id="moveFrame" class="moveFrame" src="https://www.youtube.com/embed/YRXxEyReOm0?si=W4gRLRDR5IuY19aL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-    // ,'<iframe id="moveFrame" class="moveFrame" src="https://www.youtube.com/embed/rBXvnL-T8_s?si=5lcoV9ZijoP_lRki" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    ,'<iframe id="moveFrame" class="moveFrame" src="https://www.youtube.com/embed/rBXvnL-T8_s?si=5lcoV9ZijoP_lRki" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
 );    
 
 // 埋め込みMV URLリスト
 const mvLinkList = new Array(
     'https://youtu.be/YRXxEyReOm0?si=fjvgWnrM1SRoM3if'
-    // ,'https://youtu.be/rBXvnL-T8_s?si=fFETrNwx_Y2MX_dh'
+    ,'https://youtu.be/rBXvnL-T8_s?si=fFETrNwx_Y2MX_dh'
 );    
 
 // ハッシュタグリスト
@@ -40,8 +40,8 @@ const evenHashTagsList = new Array(
 // 以下更新無い予定/////////////////////////////////////////////////////////////////////////////////
 
 // Cookie保持期間
-const LIMIT = '604800';
-// const LIMIT = '10';
+// const LIMIT = '604800';
+const LIMIT = '10';
 const MAX_AGE = ';max-age=';
 
 // 曜日リスト

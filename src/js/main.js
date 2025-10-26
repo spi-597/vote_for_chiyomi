@@ -1,4 +1,5 @@
-var epocTime = votingEndDays + 'T' + votingEndTime;
+// var epocTime = votingEndDays + 'T' + votingEndTime;
+var epocTime;
 var endDate = new Date (epocTime);
 var endsEpocTime = endDate.getTime();
 var nowDateTime = new Date();
@@ -15,15 +16,19 @@ for (const c of cookie) {
 }
 
 window.onload = function(){
+    if(votingEndDays) {
+        epocTime = votingEndDays + 'T' + votingEndTime;
+        //投票終了日を表示
+        document.getElementById('endDate').innerHTML = votingEndDate();
+
+    }
+    
     if (nowEpocTime >= endsEpocTime) {
         //サ終メッセージを表示
         document.getElementById('votingJp').innerHTML = messageStrJp;
     } else {
         //楽曲プルダウンリストを作成
         createSongList();
-        //投票終了日を表示
-        document.getElementById('endDate').innerHTML = votingEndDate();
-        document.getElementById('move').innerHTML = mvEmbedList[songListNo];
     }
 }
 
@@ -56,13 +61,11 @@ function createSongList() {
         select.appendChild(option)
     }
     select.options[songListNo].selected = true;
-    document.getElementById('move').innerHTML = mvEmbedList[songListNo];
 }
 
 function selectSong(){
     var select = document.getElementById('songList');
     songListNo = select.selectedIndex;
-    document.getElementById('move').innerHTML = mvEmbedList[songListNo];
     document.cookie = COOKIE_SONG_UPDATE+'='+songListNo+MAX_AGE+LIMIT;
 }
 
