@@ -40,8 +40,8 @@ const evenHashTagsList = new Array(
 // 以下更新無い予定/////////////////////////////////////////////////////////////////////////////////
 
 // Cookie保持期間
-// const LIMIT = '604800';
-const LIMIT = '10';
+const LIMIT = '604800';
+// const LIMIT = '10';
 const MAX_AGE = ';max-age=';
 
 // 曜日リスト
