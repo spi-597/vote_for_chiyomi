@@ -111,14 +111,6 @@ function createVoteMes(btn) {
             asciiArray.push(evenHashTagsList[i]);
         }
     }
-    
-    // MVリンクのチェック
-    if (btn == POST) {
-        if (document.mvLinkForm.elements[0].checked) {
-            asciiArray.push('\n');
-            asciiArray.push(mvLinkList[songListNo]);
-        }
-    }
 
     postArray.push(encodeURIComponent(asciiArray.join('')));
     window.open(postArray.join(''));
