@@ -1,4 +1,3 @@
-// var epocTime = votingEndDays + 'T' + votingEndTime;
 var epocTime;
 var endDate = new Date (epocTime);
 var endsEpocTime = endDate.getTime();
@@ -94,24 +93,31 @@ function createVoteMes(btn) {
     if (btn == POST) {
         // POSTボタン押下時
         postArray = ['https://twitter.com/intent/tweet?&text='];
+        postArray.push(encodeURIComponent(textGeneration().join('')));
     } else if (btn == DM) {
         // DMボタン押下時
-        postArray = ['https://twitter.com/messages/compose?recipient_id=100786821&text='];
-    }
-    // 投票文の組立
-    var asciiArray = ['(千代浦蝶美)さんの『'];
-    asciiArray.push(songList[songListNo]);
-    asciiArray.push('』に投票します！\n');
-
-    // ハッシュタグを追加
-    for(var i = 0; i < oddHashTagsList.length; i++) {
-        if(nowDateTime.getDate() % 2 !== 0) {
-            asciiArray.push(oddHashTagsList[i]);
-        } else {
-            asciiArray.push(evenHashTagsList[i]);
-        }
+        postArray = ['https://twitter.com/messages/compose?recipient_id=100786821'];
+        navigator.clipboard.writeText(textGeneration().join(''));
+        window.open(postArray);
     }
 
-    postArray.push(encodeURIComponent(asciiArray.join('')));
     window.open(postArray.join(''));
+}
+
+function textGeneration() {
+        // 投票文の組立
+        var tg = ['(千代浦蝶美)さんの『'];
+        tg.push(songList[songListNo]);
+        tg.push('』に投票します！\n');
+    
+        // ハッシュタグを追加
+        for(var i = 0; i < oddHashTagsList.length; i++) {
+            if(nowDateTime.getDate() % 2 !== 0) {
+                tg.push(oddHashTagsList[i]);
+            } else {
+                tg.push(evenHashTagsList[i]);
+            }
+        }
+        return tg;
+
 }
