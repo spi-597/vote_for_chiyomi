@@ -1,5 +1,5 @@
 // 終了日
-var votingEndDays = '2025-12-23';
+var votingEndDays = '2026-02-03';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
