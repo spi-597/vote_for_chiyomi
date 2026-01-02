@@ -1,4 +1,4 @@
-var epocTime;
+var epocTime = votingEndDays + 'T' + votingEndTime;;
 var endDate = new Date (epocTime);
 var endsEpocTime = endDate.getTime();
 var nowDateTime = new Date();
@@ -16,10 +16,8 @@ for (const c of cookie) {
 
 window.onload = function(){
     if(votingEndDays) {
-        epocTime = votingEndDays + 'T' + votingEndTime;
         //投票終了日を表示
         document.getElementById('endDate').innerHTML = votingEndDate();
-
     }
     
     if (nowEpocTime >= endsEpocTime) {
