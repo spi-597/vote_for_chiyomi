@@ -92,14 +92,14 @@ function createVoteMes(btn) {
         // POSTボタン押下時
         postArray = ['https://twitter.com/intent/tweet?&text='];
         postArray.push(encodeURIComponent(textGeneration().join('')));
+        navigator.clipboard.writeText(textGeneration().join(''));
+        window.open(postArray.join(''));
     } else if (btn == DM) {
         // DMボタン押下時
         postArray = ['https://twitter.com/messages/compose?recipient_id=100786821'];
         navigator.clipboard.writeText(textGeneration().join(''));
         window.open(postArray);
     }
-
-    window.open(postArray.join(''));
 }
 
 function textGeneration() {
