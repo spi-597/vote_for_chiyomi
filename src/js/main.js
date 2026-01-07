@@ -92,7 +92,7 @@ function createVoteMes(btn) {
         // POSTボタン押下時
         postArray = ['https://twitter.com/intent/tweet?&text='];
         postArray.push(encodeURIComponent(textGeneration().join('')));
-        navigator.clipboard.writeText(textGeneration().join(''));
+        // navigator.clipboard.writeText(textGeneration().join(''));
         window.open(postArray.join(''));
     } else if (btn == DM) {
         // DMボタン押下時
