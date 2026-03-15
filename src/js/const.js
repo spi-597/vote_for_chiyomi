@@ -1,5 +1,5 @@
 // 終了日
-var votingEndDays = '2026-02-10';
+var votingEndDays = '2026-04-07';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
@@ -10,8 +10,9 @@ const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 
 // 楽曲リスト
 const songList = new Array(
-    '夢追いの蝶'
-    , 'Butterfly Dream'
+    // '夢追いの蝶'
+    // , 'Butterfly Dream'
+    'Butterfly Dream'
 );    
 
 // ハッシュタグリスト
