@@ -3,16 +3,17 @@ var votingEndDays = '2026-04-07';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
-const COOKIE_SONG_UPDATE = 'newSong_20250205';
+const COOKIE_SONG_UPDATE = 'newSong_20260426';
 
 // 前回投票日
 const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 
 // 楽曲リスト
 const songList = new Array(
-    // '夢追いの蝶'
-    // , 'Butterfly Dream'
-    'Butterfly Dream'
+    'ちあっぷ！'
+    ,'夢追いの蝶'
+    , 'Butterfly Dream'
+    // 'Butterfly Dream'
 );    
 
 // ハッシュタグリスト
