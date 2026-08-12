@@ -3,17 +3,18 @@ var votingEndDays = '2026-08-25';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
-const COOKIE_SONG_UPDATE = 'newSong_20260426';
+const COOKIE_SONG_UPDATE = 'newSong_20260813';
 
 // 前回投票日
 const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 
 // 楽曲リスト
 const songList = new Array(
-    'ちあっぷ！'
-    ,'夢追いの蝶'
+    'THOUSAND VOICES'
+    , 'ちあっぷ！'
+    //, 'Aim for the Star'
+    , '夢追いの蝶'
     , 'Butterfly Dream'
-    // 'Butterfly Dream'
 );    
 
 // ハッシュタグリスト
