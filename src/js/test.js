@@ -104,8 +104,8 @@ function createVoteMes(btn) {
         // DMボタン押下時
         // postArray = ['https://twitter.com/messages/compose?recipient_id=100786821'];
         postArray = ['https://twitter.com/messages/compose?recipient_id=100786821&text='];
-        postArray.push(encodeURIComponent(textGeneration().join(''))); //TODO
-        // navigator.clipboard.writeText(textGeneration().join(''));
+        postArray.push(encodeURIComponent(textGeneration().join('')));
+        navigator.clipboard.writeText(textGeneration().join(''));
         // window.open(postArray);
         window.open(postArray.join(''));
     }
