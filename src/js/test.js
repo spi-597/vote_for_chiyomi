@@ -105,7 +105,9 @@ function createVoteMes(btn) {
         // postArray = ['https://twitter.com/messages/compose?recipient_id=100786821'];
         postArray = ['https://twitter.com/messages/compose?recipient_id=100786821&text='];
         navigator.clipboard.writeText(textGeneration().join(''));
-        window.open(postArray);
+        postArray.push(encodeURIComponent(textGeneration().join(''))); //TODO
+        // window.open(postArray);
+        window.open(postArray.join(''));
     }
 }
 
