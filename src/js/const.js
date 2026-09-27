@@ -1,5 +1,5 @@
 // 終了日
-var votingEndDays = '2026-08-25';
+var votingEndDays = '2026-10-27';
 var votingEndTime = '23:59:59.999';
 
 // 楽曲更新日
@@ -10,11 +10,11 @@ const COOKIE_LAST_VOTE_DATE = "lastVoteDate"
 
 // 楽曲リスト
 const songList = new Array(
-    'THOUSAND VOICES'
-    , 'ちあっぷ！'
+    // 'THOUSAND VOICES'
+    // , 'ちあっぷ！'
     //, 'Aim for the Star'
-    , '夢追いの蝶'
-    , 'Butterfly Dream'
+    // , '夢追いの蝶'
+    'Butterfly Dream'
 );    
 
 // ハッシュタグリスト
